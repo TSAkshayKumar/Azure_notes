@@ -8,14 +8,14 @@
 
 2. When to use it?
 
-    Use Azure File Storage when you need a shared file system that can be accessed from multiple VMs or applications.
+    Use Azure File Storage when you need a shared file system that can be accessed from multiple VMs or applications (pods).
     It is suitable for scenarios like storing configuration files, sharing data between applications, and serving as a common storage location for applications in a cloud environment.
 
-3. Example from DevOps Engineer point of view?
+3. Equivalent service in AWS:
 
-    A DevOps engineer may leverage Azure File Storage to store configuration files that are shared among multiple application instances.
-    In a deployment pipeline, scripts or configuration files stored in Azure File Storage can be mounted to VMs or containers during the deployment process.
+    The equivalent service in AWS is Amazon Elastic File System (EFS). 
+    
+    - 1 file source multiple vm users: File System in Azure/ EFS in AWS
+    - 1 file source 1 vm users: Manage Disk in Azure/ EBS in AWS
 
-4. Equivalent service in AWS:
-
-    The equivalent service in AWS is Amazon Elastic File System (EFS). EFS provides scalable file storage for use with Amazon EC2 instances, supporting the Network File System (NFS) protocol.
+    EFS provides scalable file storage for use with Amazon EC2 instances, supporting the Network File System (NFS) protocol.
