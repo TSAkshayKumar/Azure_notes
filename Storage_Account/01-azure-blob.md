@@ -2,43 +2,60 @@
 
 1. What is it?
 
-    Azure Blob Storage is a cloud-based object storage solution provided by Microsoft Azure.
-    It is designed to store and manage large amounts of unstructured data, such as documents, images, videos, and other types of binary and text data.
+    Azure Blob Storage is a cloud-based **object storage** solution.
+    Used to store and manage large amounts of unstructured data, such as documents, images, videos, and other types of binary and text data.
     Blobs are organized into containers, and each blob is assigned a unique URL for access.
 
-- Object storage account?
+2.  what is Object storage?
 
-    An Object Storage Account is a cloud storage service that stores data as objects instead of files or database records.
+    An Object Storage stores data as objects instead of files or database records.
 
-2. When to use it?
+3. When to use it?
 
     Use Azure Blob Storage when you need to store and retrieve large amounts of unstructured data.
-    It is suitable for scenarios like serving images or videos to a website, storing backups, and handling data for analytics and big data processing.
+    like serving images or videos to a website, storing backups, and handling data for analytics and big data processing.
 
-3. Example from DevOps Engineer point of view?
+4. Example from DevOps Engineer point of view?
 
     A DevOps engineer may use Azure Blob Storage to store artifacts and binaries produced during the build process, ensuring a centralized and scalable storage solution.
-    Azure Storage Explorer or Azure CLI can be used to automate the uploading and retrieval of artifacts during deployment pipelines.
 
-4. Equivalent service in AWS:
+5. Equivalent service in AWS:
 
-    The equivalent service in AWS is Amazon Simple Storage Service (S3). S3 is also an object storage service designed for scalable and secure storage of objects, such as files and data.
+    Amazon Simple Storage Service (S3).
+
+ ------------------------------------------------------------------------
+## Quick Revision
+- **Blob Storage** = Azure's **Object Storage** service.
+- **Object** = Any unstructured file (PDF, Image, Video, ZIP, JSON, etc.).
+- **Container** = grouping of blobs.
+- **Blob Types**:
+  - **Block Blob** = Documents, images, videos (Most common ⭐)
+  - **Append Blob** = Logs
+  - **Page Blob** = Azure VM disks (VHDs)
+   
+- **Hot/Cool/Archive** = Access tiers based on usage frequency.
+- **Every Blob has a unique URL** for access.
+- **Lifecycle Management** = Automatically move Hot → Cool → Archive or delete old blobs to reduce cost.
+- **Upload Methods** = Azure Portal, Storage Explorer, Azure CLI, Azure SDKs.
+- **AWS Equivalent** = Amazon S3.
+
+ ------------------------------------------------------------------------
+
+
+# ========================== Extra Config Relate information ==========================
 
  ------------------------------------------------------------------------
 
 ## 2. Blob Types
 
   -----------------------------------------------------------------------
-  Blob Type              Description                 Use Case
-  ---------------------- --------------------------- --------------------
-  Block Blob ⭐          Stores text/files in blocks Documents, images,
-                                                     videos, AI datasets
+  Blob Type        Description                     Use Case
+  ---------------------- ------------------------ --------------------
+  Block Blob ⭐   Stores text/files in blocks      Documents, images, videos, AI datasets
 
-  Append Blob            Optimized for append        Logs, telemetry
-                         operations                  
+  Append Blob     Optimized for append operations  Logs, telemetry                  
 
-  Page Blob              Random read/write pages     Azure VM disks
-                                                     (VHDs)
+  Page Blob       Random read/write pages          Azure VM disks(VHDs)
  -----------------------------------------------------------------------
 
 ## 3. Access Tiers
@@ -52,7 +69,7 @@
  ------------------------------------------------------------------------
 
 
-## 4. Blob URL
+## 4. Blob URL - Each Blob has a unique url.
     https://<storage-account>.blob.core.windows.net/<container>/<blob>
 
 Example:
@@ -73,11 +90,12 @@ Example:
 
 ## 6. Lifecycle Management
 
-Automatically move blobs: - Hot → Cool - Cool → Archive - Delete after
-retention period
+Automatically move blobs: 
+- Hot → Cool 
+- Cool → Archive 
+- Delete after retention period
 
 Useful for cost optimization.
-
 
 ------------------------------------------------------------------------
 
